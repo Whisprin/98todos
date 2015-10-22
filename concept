@@ -1,0 +1,11 @@
+# a designer can:
+# view all todos
+  get 'todos' => 'todos#all'
+# view a users todos
+  get 'users/:uid/todos' => 'todos#user', as :uid
+# create todo
+  get 'todos/new' => 'todos#new'
+  post 'todos' => 'todos#create'
+# update todo
+  get 'todos/edit/:id' => 'todos#edit', as :id
+  put 'todos' => 'todos#update'

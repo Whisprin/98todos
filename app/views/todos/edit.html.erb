@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="container">
+    <%= link_to image_path("logo_99chairs.png") do %>
+      <%= image_tag "logo_99chairs.png" %>
+    <% end %>
+    <h1>Edit Todo <%= @todo.id %> for User <%= @user %></h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+    
+<%= form_for @todo, url: "/users/#{@user}/todos/#{@todo.id}", method: :put do |f| %>  
+  <div class="field"> 
+    <%= f.label :todo %><br> 
+    <%= f.text_area :content %> 
+    <%= f.hidden_field :uid, :value => @user %>
+  </div> 
+  <div class="actions"> 
+    <%= f.submit "Update" %> 
+  </div> 
+<% end %>
+   
+</div>
+</div>

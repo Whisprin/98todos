@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="container">
+    <%= link_to image_path("logo_99chairs.png") do %>
+      <%= image_tag "logo_99chairs.png" %>
+    <% end %>
+    <h1>Todos for user <%= @user %></h1>
+  </div>
+</div>
+
+<div class="todos">
+  <div class="container">
+  <%= link_to "Show all todos", "/todos" %>
+
+    <% @todos.each do |todo| %> 
+  <div class="todo">   
+  <form>
+    <label>
+        <input name="checkbox-0 " type="checkbox">
+    </label>
+  </form>
+
+    <p class="content"><%= todo.content %></p> 
+    <p class="time"><%= todo.created_at %></p> 
+  </div> 
+  <% end %>
+  <%= link_to 'New Todo', "todos/new" %>
+
+  </div>
+</div>
