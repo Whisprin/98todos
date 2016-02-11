@@ -4,6 +4,8 @@ class CreateTodos < ActiveRecord::Migration
 
       t.integer :uid
       t.text :content
+      t.boolean :done, default: false
+      t.datetime :deadline
       t.timestamps null: false
     end
 

@@ -1,4 +1,11 @@
 class TodosController < ApplicationController
+	before_action :set_todos, only: [:edit, :update]
+	respond_to :html, :js
+
+	def set_todos
+		@todos = Task.find(params[:id])
+	end
+
 	def index 
 		@todos = Todo.all 
 	end
@@ -22,12 +29,12 @@ class TodosController < ApplicationController
 		end
 	end
 
-	def edit
+	def edit2
 		@user = params[:uid]
 		@todo = Todo.find_by! id: params[:id]
 	end
 
-	def update
+	def update2
 		@todo = Todo.update(params[:id], todo_params)
 		if @todo.save
 			redirect_to '/todos'

@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-t1 = Todo.create(uid: 0, content: "We're at the beach so you should meet us here! I make a mean sandcastle. :)")
+t1 = Todo.create(uid: 0, content: "We're at the beach so you should meet us here! I make a mean sandcastle. :)", done: true)
 
 t2 = Todo.create(uid: 1, content: "Let's meet there!")
 
